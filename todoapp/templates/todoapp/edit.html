@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'todoapp/base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    {% block content %}
+  <div style="display: flex; align-items: center; justify-content:  center; margin-top: 100px;">
+    <form method="POST">
+        {% csrf_token %}
+          <div class="mb-3">
+          <input name="task" type="text" style="width: 400px; "  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"placeholder="Enter task here">
+          </div>
+          <button type="submit" style=" margin-left: 34%; margin-top: 10px;" class="btn btn-primary">Edit</button>
+        </form>
+  </div>
+    {% endblock %}
+    
+</body>
+</html>
