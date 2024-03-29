@@ -9,35 +9,45 @@
         <title>{% block title %}SIMPLETODO{% endblock %}</title>
  </head>
     
-
+<style>
+    @media screen and (max-width: 750px) {
+    nav {
+      width: 70%; /* Decrease width for smaller screens */
+    }
+  }
+</style>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" style="text-decoration: none;" href="{% url 'register' %}">SIMPLE<span style="color: green;">TODO</span> </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout-user' %}">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Create Account</a>
-              </li>
-            </ul>
-          </div>
+  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding-left: 380px; width:100%;">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="text-decoration: none; color:black;" href="{% url 'register' %}">SIMPLE<span style="color: green;">TODO</span> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" style="color: black;" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  style="color: black;" href="{% url 'logout-user' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: black;" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: black;" href="{% url 'register' %}">Create Account</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+  
+    
       <div style="display: flex; align-items: center; justify-content: center; padding-top: 100px; padding-bottom:20px;">
         <div>
-          <h1 style="color:black;">Welcome to SIMPLETODO</h1>
+          <h1 style="color:black;">Welcome to SIMPLE TO-DO</h1>
+          <p style="text-align: center; font-weight: 200; font-size: 20px; font-style:italic">Manage your day and be more productive</p>
         </div>
       </div>
     {% block content %}
